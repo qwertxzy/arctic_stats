@@ -21,13 +21,18 @@ ax.plot(xpoints, ypoints_top, label = "Best")
 ax.plot(xpoints, ypoints_topfive, label = "Best 5 Avg")
 ax.plot(xpoints, ypoints_avg, label = "Overall average")
 
+ax.legend(loc="upper left")
+ax.set_xlabel("Generation")
+ax.set_ylabel("Fitness")
+
 ax2 = ax.twinx()
 
 ax2.plot(xpoints, ypoints_invalid, label="Invalid", color="red")
 
-plt.legend()
-plt.ylabel('Fitness')
-plt.xlabel('Generation')
+ax2.legend(loc="upper right")
+ax2.set_xlabel("Generation")
+ax2.set_ylabel("Invalid count")
+
 plt.locator_params(axis="x", nbins=15)
 plt.locator_params(axis="y", nbins=20)
 
